@@ -5,19 +5,18 @@ import Historico from "./pages/Historico";
 import styled from "styled-components";
 import LogoImg from "./assets/logo.png";
 
-
 const Page = styled.main`
+  width: 100%;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: ${({ theme }) => theme.spacing.pagePadding};
 `;
 
 const Shell = styled.div`
-  width: min(${({ theme }) => theme.sizes.maxWidth}, 96%);
+  width: 100%;
   border-radius: 8px;
-  border: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  border: 1px solid #f7efdd;
   padding: 40px;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   backdrop-filter: blur(6px) saturate(120%);
@@ -89,7 +88,7 @@ export default function App() {
   return (
     <Page>
       <Shell className="fade-in">
-        <Header>  
+        <Header>
           <Brand>
             <img
               src={LogoImg}

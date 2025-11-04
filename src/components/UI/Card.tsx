@@ -5,5 +5,6 @@ export const Card = styled.div`
   padding: 12px 8px;
   display: flex;
   flex-direction: column;
+  align-items: end;
   gap: 12px;
 `;

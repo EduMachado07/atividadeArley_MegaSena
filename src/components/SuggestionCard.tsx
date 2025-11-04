@@ -8,18 +8,21 @@ const popIn = keyframes`
 `;
 
 const Card = styled.div`
-  background: ${({ theme }) => theme.colors.card};
+  width: 100%;
+  // background: ${({ theme }) => theme.colors.card};
   border-radius: 10px;
-  padding: 22px;
+  padding: 16px 22px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  border: 1px solid ${({ theme }) => theme.colors.border};
+  gap: 26px;
+  border: 1px solid #683d26;
   box-shadow: ${({ theme }) => theme.shadows.card};
 `;
 
 const NumberGroup = styled.div`
+  width: 100%;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -28,18 +31,19 @@ const NumberGroup = styled.div`
 
 const Ball = styled.span`
   display: inline-flex;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
+  border: 2px solid #381f12;
   align-items: center;
   justify-content: center;
 
-  background: ${({ theme }) => theme.colors.primary};
-  color: white;
+  // background: ${({ theme }) => theme.colors.primary};
+  color: #381f12;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 
   animation: ${popIn} 0.35s ease forwards;
   transition: transform 0.22s ease;
@@ -50,13 +54,17 @@ const Ball = styled.span`
 `;
 
 const Meta = styled.div`
-  font-size: 0.88rem;
-  color: ${({ theme }) => theme.colors.muted};
-  min-width: 160px;
+  font-size: 1rem;
+  color: #381f12;
+  width: 100%;
   text-align: right;
 `;
 
-export default function SuggestionCard({ suggestion }: { suggestion: Suggestion }) {
+export default function SuggestionCard({
+  suggestion,
+}: {
+  suggestion: Suggestion;
+}) {
   return (
     <Card>
       <NumberGroup>
@@ -65,7 +73,15 @@ export default function SuggestionCard({ suggestion }: { suggestion: Suggestion 
         ))}
       </NumberGroup>
 
-      <Meta>{new Date(suggestion.createdAt).toLocaleString()}</Meta>
+      <Meta>
+        {new Date(suggestion.createdAt).toLocaleString("pt-BR", {
+          day: "2-digit",
+          month: "long",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+        })}
+      </Meta>
     </Card>
   );
 }

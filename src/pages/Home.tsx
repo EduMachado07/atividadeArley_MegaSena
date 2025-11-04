@@ -26,7 +26,7 @@ const BtnPrimary = styled.button`
   padding: 12px 18px;
   border: 1px solid #381f12;
   border-radius: 10px;
-  background: #381f12;
+  background: #683d26;
   color: #ffffffff;
   font-weight: 800;
   cursor: pointer;
@@ -34,10 +34,10 @@ const BtnPrimary = styled.button`
 `;
 const BtnOutline = styled.button`
   padding: 12px 18px;
-  border: 1px solid;
+  border: 1px solid #683d26;
   border-radius: 10px;
   background: #fcf8f0;
-  color: #071428;
+  color: #381f12;
   font-weight: 800;
   cursor: pointer;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -47,7 +47,7 @@ export default function Home() {
   const nav = useNavigate();
   return (
     <Box>
-      <h2 style={{ margin: 0, fontFamily: "Orbitron, sans-serif" }}>
+      <h2 style={{ margin: 0, fontFamily: "Orbitron, sans-serif", color: "#381f12" }}>
         Seja Bem-Vindo !
       </h2>
 
